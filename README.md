@@ -2,14 +2,14 @@
 
 Static bilingual glossary site for game 3D CG production.
 
-## Contents
+## Included
 - 500 glossary entries
-- Top page
-- Searchable dictionary index
-- Individual term pages
+- Top page (`index.html`)
+- Searchable dictionary index (`dictionary.html`)
+- Individual term pages (`/terms/...`)
 - Light / dark theme toggle
 
-## Notes
-- English-first labels with Japanese alongside
-- Definitions are written in both English and Japanese
-- Emphasis is on durable 3DCG concepts rather than DCC-specific button names
+## GitHub Pages
+This folder is arranged so you can place its contents directly in the root of a GitHub repository and publish with GitHub Pages.
+
+See `PUBLISH_ON_GITHUB_PAGES_JA.md` for the Japanese publishing guide.
