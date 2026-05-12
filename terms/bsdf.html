@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BSDF | Game 3D CG Workflow Lexicon</title>
+  <meta name="description" content="反射だけでなく透過も含めて、表面での光の振る舞いを表せる広いシェーディングモデルです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var theme = 'light';
+      try {
+        var stored = localStorage.getItem('g3d-theme');
+        if (stored === 'light' || stored === 'dark') {
+          theme = stored;
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        }
+      } catch (error) {}
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="../index.html">
+          <span class="brand__kicker">Game 3D CG Workflow</span>
+          <strong>Lexicon / 用語辞典</strong>
+        </a>
+        <div class="header-tools">
+          <nav class="site-nav" aria-label="Primary">
+            <a href="../index.html">Top</a>
+            <a href="../dictionary.html">Dictionary</a>
+          </nav>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="visually-hidden">Toggle light and dark mode</span>
+            <span class="theme-toggle__slot theme-toggle__slot--sun"><svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 1.8v3.1M12 19.1v3.1M1.8 12h3.1M19.1 12h3.1M4.8 4.8l2.2 2.2M17 17l2.2 2.2M19.2 4.8L17 7M7 17l-2.2 2.2"></path></svg></span>
+            <span class="theme-toggle__slot theme-toggle__slot--moon"><svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 14.8A8.8 8.8 0 0 1 9.2 3.8a9.2 9.2 0 1 0 11 11Z"></path></svg></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+<main>
+  <section class="entry-hero">
+    <div class="shell entry-hero__grid">
+      <div>
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Top</a>
+          <span>/</span>
+          <a href="../dictionary.html">Dictionary</a>
+        </nav>
+        <p class="eyebrow">Dictionary Entry</p>
+        <h1>BSDF <span>BSDF</span></h1>
+      </div>
+      <div class="entry-hero__side">
+        <p class="entry-summary">A broader shading model that can describe both reflection and transmission behavior.</p>
+        <p class="entry-summary entry-summary--ja">反射だけでなく透過も含めて、表面での光の振る舞いを表せる広いシェーディングモデルです。</p>
+        <div class="meta-chip-group"><span class="meta-chip">Surface / サーフェス</span><span class="meta-chip">Initial / B</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell entry-layout">
+      <aside class="entry-aside">
+        <div class="aside-block">
+          <p class="eyebrow">Workflow Section</p>
+          <p class="aside-value">Surface<br><span>サーフェス</span></p>
+        </div>
+      </aside>
+
+      <div class="entry-content">
+        <section class="content-section">
+          <h2 class="content-title">Definition <span>定義</span></h2>
+          <div class="lang-block">
+            <span class="lang-tag">EN</span>
+            <p>BSDF stands for Bidirectional Scattering Distribution Function. A broader shading model that can describe both reflection and transmission behavior.</p><p>In production, this concept appears after the main form is stable and the focus shifts to UVs, baking, texture data, and material response. Many surface problems should be solved through texture and shading choices rather than by adding unnecessary polygons. It is often discussed together with BRDF, Clear Coat, Fresnel, and Transmission, because those neighboring terms help define its boundaries, inputs, or downstream effects.</p>
+          </div>
+          <div class="lang-block">
+            <span class="lang-tag">JP</span>
+            <p>BSDF は Bidirectional Scattering Distribution Function の略です。 反射だけでなく透過も含めて、表面での光の振る舞いを表せる広いシェーディングモデルです。</p><p>制作の現場では、形状が固まったあとに、UV、ベイク、テクスチャ情報、マテリアル反応を詰める段階で意味がはっきりします。表面表現の問題は、不要なポリゴンを増やすのではなく、テクスチャとシェーディングで解くべき場合が多いです。 BRDF、クリアコート、フレネル、トランスミッション などの関連語と一緒に見ると、この語が何を指し、何と結び付いて使われるのかが理解しやすくなります。</p>
+          </div>
+        </section>
+
+        <section class="content-section content-section--related">
+          <h2 class="content-title">Other terms <span>関連語</span></h2>
+          <div class="related-grid">
+            <a class="related-link" href="brdf.html"><strong>BRDF</strong><span>BRDF</span></a><a class="related-link" href="clear-coat.html"><strong>Clear Coat</strong><span>クリアコート</span></a><a class="related-link" href="fresnel.html"><strong>Fresnel</strong><span>フレネル</span></a><a class="related-link" href="transmission.html"><strong>Transmission</strong><span>トランスミッション</span></a>
+          </div>
+        </section>
+
+        <nav class="pager" aria-label="Entry navigation"><a class="pager-link" href="brief.html"><span>Previous</span><strong>Brief</strong></a><a class="pager-link" href="build.html"><span>Next</span><strong>Build</strong></a></nav>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="eyebrow">Game 3D CG Workflow Lexicon</p>
+          <p class="footer-copy">A bilingual reference spanning beginner to advanced game 3D CG production.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">Top</a>
+          <a href="../dictionary.html">Dictionary</a>
+        </div>
+      </div>
+    </footer>
+    <script src="../theme.js" defer></script>
+
+
+</body>
+</html>
