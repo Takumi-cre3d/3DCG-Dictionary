@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Depth Pass | Game 3D CG Workflow Lexicon</title>
+  <meta name="description" content="見える色ではなく、カメラからの距離情報を格納するレンダー出力です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var theme = 'light';
+      try {
+        var stored = localStorage.getItem('g3d-theme');
+        if (stored === 'light' || stored === 'dark') {
+          theme = stored;
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        }
+      } catch (error) {}
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="../index.html">
+          <span class="brand__kicker">Game 3D CG Workflow</span>
+          <strong>Lexicon / 用語辞典</strong>
+        </a>
+        <div class="header-tools">
+          <nav class="site-nav" aria-label="Primary">
+            <a href="../index.html">Top</a>
+            <a href="../dictionary.html">Dictionary</a>
+          </nav>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="visually-hidden">Toggle light and dark mode</span>
+            <span class="theme-toggle__slot theme-toggle__slot--sun"><svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 1.8v3.1M12 19.1v3.1M1.8 12h3.1M19.1 12h3.1M4.8 4.8l2.2 2.2M17 17l2.2 2.2M19.2 4.8L17 7M7 17l-2.2 2.2"></path></svg></span>
+            <span class="theme-toggle__slot theme-toggle__slot--moon"><svg class="theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 14.8A8.8 8.8 0 0 1 9.2 3.8a9.2 9.2 0 1 0 11 11Z"></path></svg></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+<main>
+  <section class="entry-hero">
+    <div class="shell entry-hero__grid">
+      <div>
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Top</a>
+          <span>/</span>
+          <a href="../dictionary.html">Dictionary</a>
+        </nav>
+        <p class="eyebrow">Dictionary Entry</p>
+        <h1>Depth Pass <span>デプスパス</span></h1>
+      </div>
+      <div class="entry-hero__side">
+        <p class="entry-summary">A render output that stores distance from the camera instead of visible color.</p>
+        <p class="entry-summary entry-summary--ja">見える色ではなく、カメラからの距離情報を格納するレンダー出力です。</p>
+        <div class="meta-chip-group"><span class="meta-chip">Lighting &amp; Rendering / ライティング &amp; レンダリング</span><span class="meta-chip">Initial / D</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell entry-layout">
+      <aside class="entry-aside">
+        <div class="aside-block">
+          <p class="eyebrow">Workflow Section</p>
+          <p class="aside-value">Lighting &amp; Rendering<br><span>ライティング &amp; レンダリング</span></p>
+        </div>
+      </aside>
+
+      <div class="entry-content">
+        <section class="content-section">
+          <h2 class="content-title">Definition <span>定義</span></h2>
+          <div class="lang-block">
+            <span class="lang-tag">EN</span>
+            <p>A render output that stores distance from the camera instead of visible color.</p><p>In production, this concept matters when the image is being evaluated for readability, light response, and render cost. The visually richest option is not always the best one if it hides form, slows iteration, or makes debugging harder. It is often discussed together with Specular Pass, Z-Depth, Diffuse Pass, and Post Process, because those neighboring terms help define its boundaries, inputs, or downstream effects.</p>
+          </div>
+          <div class="lang-block">
+            <span class="lang-tag">JP</span>
+            <p>見える色ではなく、カメラからの距離情報を格納するレンダー出力です。</p><p>制作の現場では、画面の読みやすさ、光の反応、描画コストを見ながら最終的な見え方を評価する段階で重要になります。見た目が豪華であることと、ゲーム画面として読みやすく運用しやすいことは必ずしも同じではありません。 スペキュラーパス、Z深度、ディフューズパス、ポストプロセス などの関連語と一緒に見ると、この語が何を指し、何と結び付いて使われるのかが理解しやすくなります。</p>
+          </div>
+        </section>
+
+        <section class="content-section content-section--related">
+          <h2 class="content-title">Other terms <span>関連語</span></h2>
+          <div class="related-grid">
+            <a class="related-link" href="specular-pass.html"><strong>Specular Pass</strong><span>スペキュラーパス</span></a><a class="related-link" href="z-depth.html"><strong>Z-Depth</strong><span>Z深度</span></a><a class="related-link" href="diffuse-pass.html"><strong>Diffuse Pass</strong><span>ディフューズパス</span></a><a class="related-link" href="post-process.html"><strong>Post Process</strong><span>ポストプロセス</span></a>
+          </div>
+        </section>
+
+        <nav class="pager" aria-label="Entry navigation"><a class="pager-link" href="depth-of-field.html"><span>Previous</span><strong>Depth of Field</strong></a><a class="pager-link" href="detail-map.html"><span>Next</span><strong>Detail Map</strong></a></nav>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <div>
+          <p class="eyebrow">Game 3D CG Workflow Lexicon</p>
+          <p class="footer-copy">A bilingual reference spanning beginner to advanced game 3D CG production.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">Top</a>
+          <a href="../dictionary.html">Dictionary</a>
+        </div>
+      </div>
+    </footer>
+    <script src="../theme.js" defer></script>
+
+
+</body>
+</html>
